@@ -1,0 +1,16 @@
+:root{
+    --color-1: #1a1b1bf3;
+}
+
+@font-face {
+    font-family: avenirBold;
+    src: url(../storage/font/avenir_ff/AvenirLTStd-Black.otf);
+}
+@font-face {
+    font-family: avenirMediu;
+    src: url(../storage/font/avenir_ff/AvenirLTStd-Book.otf);
+}
+@font-face {
+    font-family: avenirReg;
+    src: url(../storage/font/avenir_ff/AvenirLTStd-Roman.otf)
+}

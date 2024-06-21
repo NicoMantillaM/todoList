@@ -1,0 +1,104 @@
+@import url(./variables.css);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(100deg, #575656, #062e3f);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 15vh;
+    gap: 5vh;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4.6vh;
+}
+h1{
+    font-size: 14vh;
+    color: white;
+    font-family: "avenirMediu";
+    font-weight: 550;
+}
+.add_task{
+    display: flex;
+    flex-direction: row;
+}
+input {
+    border: none;
+    outline: none;
+    background-color: #1a1b1bf3;
+    color: white;
+    font-size: 2.5vh;
+    padding: 1.3vh 35vh 1.3vh 2.3vh;
+    border-radius: 2vh 0 0  2vh;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 1vh 1.5vh;
+    font-size: 2.3vh;
+    border-radius: 0 2vh 2vh 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+    font-family: avenirMediu;
+    color: rgba(255, 255, 255, 0.884);
+}
+
+#date{
+    color: rgba(255, 255, 255, 0.692);     
+    font-family: avenirMediu;
+    font-size: 2vh;
+}
+
+.main img{
+    width: 2.5vw;
+}
+.section_onhold {
+}
+.imagenes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vh;
+}
+.task_hold {
+    margin-top: 2.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-1);
+    padding: 0.5vh 2vh;
+    align-items: center;
+    border-radius: 4vh;
+}
+.section_ready {
+}
+.task_ready {
+    opacity: 0.5; 
+    margin-top: 2vh;
+    margin-top: 2.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-1);
+    padding: 0.5vh 2vh;
+    align-items: center;
+    border-radius: 4vh;
+}
