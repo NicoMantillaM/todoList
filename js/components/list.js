@@ -8,7 +8,7 @@ export const task = async(info, status) => {
                 <p>${element.task}</p>
                 <div class="imagenes">
                     <img src="storage/img/check.png" alt="checkimg">
-                    <img src="storage/img/trash.png" alt="trashimg">
+                    <img class="trash" data-id="${element.id}" src="storage/img/trash.png" alt="trashimg">
                 </div>
             </div>
             `;
@@ -18,7 +18,7 @@ export const task = async(info, status) => {
                 <del>${element.task}</del>
                 <div class="imagenes">
                     <img src="storage/img/check.png" alt="checkimg">
-                    <img src="storage/img/trash.png" alt="trashimg">
+                    <img class="trash" data-id="${element.id}" src="storage/img/trash.png" alt="trashimg">
                 </div>
             </div>
             `;

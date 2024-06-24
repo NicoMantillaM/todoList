@@ -1,4 +1,4 @@
-import { getAllTask, addTask } from "./module/api.js";
+import { getAllTask, addTask, deleteTask } from "./module/api.js";
 import { task } from "./components/list.js";
 
 
@@ -12,14 +12,30 @@ document.addEventListener('DOMContentLoaded', async() => {
 
 
     let info = await getAllTask();
-
+    
     let loadTasks = async() => {
+
+        info = await getAllTask();
         //crear un nuevo array con los elementos que cumplan la condicion
         let taskOnHold = info.filter(task=> task.status === 'On hold');   
         let taskready = info.filter(task=> task.status === 'ready');
     
         section__onhold.innerHTML = await task(taskOnHold, 'On hold');
         section__ready.innerHTML = await task(taskready, 'ready');
+       
+        document.querySelectorAll('.trash').forEach(button => {
+            button.addEventListener("click", async (e) => {
+                let id = e.target.dataset.id;
+                e.target.closest('.task_hold, .task_ready').remove(); 
+                await deleteTask(id);
+
+                info.forEach(async element => {
+                    if(element.id == id){
+                        info.pop(element);
+                    }
+                });
+            });
+        });
     };
 
     await loadTasks();
@@ -33,7 +49,9 @@ document.addEventListener('DOMContentLoaded', async() => {
         };
         await addTask(newTask);
         taskName.value = '';
+        info.push(newTask);
         await loadTasks();
     });
+
 });
 

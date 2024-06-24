@@ -22,3 +22,12 @@ export const addTask = async(task) => {
     const data = await res.json();
     return data;
 }
+
+export const deleteTask = async (id) => {
+    const url = `https://66760010a8d2b4d072f22091.mockapi.io/Todolist/${id}`;
+    const opcion = { method: 'DELETE' };
+
+    const res = await fetch(url, opcion);
+    const data = await res.json();
+    return data;
+};
