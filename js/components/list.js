@@ -7,7 +7,7 @@ export const task = async(info, status) => {
             <div class="task_hold">
                 <p>${element.task}</p>
                 <div class="imagenes">
-                    <img src="storage/img/check.png" alt="checkimg">
+                    <img class="check" data-id="${element.id}" src="storage/img/check.png" alt="checkimg">
                     <img class="trash" data-id="${element.id}" src="storage/img/trash.png" alt="trashimg">
                 </div>
             </div>
@@ -17,7 +17,7 @@ export const task = async(info, status) => {
             <div class="task_ready">
                 <del>${element.task}</del>
                 <div class="imagenes">
-                    <img src="storage/img/check.png" alt="checkimg">
+                    <img class="check" data-id="${element.id}" src="storage/img/check.png" alt="checkimg">
                     <img class="trash" data-id="${element.id}" src="storage/img/trash.png" alt="trashimg">
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import { getAllTask, addTask, deleteTask } from "./module/api.js";
+import { getAllTask, addTask, deleteTask, checkTask } from "./module/api.js";
 import { task } from "./components/list.js";
 
 
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async() => {
     const updateDateTime = () => {
         document.querySelector('#date').textContent = new Date().toLocaleString();
     };
-    updateDateTime();
+    updateDateTime()
     setInterval(updateDateTime, 1000);
 
 
@@ -31,9 +31,22 @@ document.addEventListener('DOMContentLoaded', async() => {
 
                 info.forEach(async element => {
                     if(element.id == id){
-                        info.pop(element);
+                        info(element);
                     }
-                });
+                })
+            });
+        });
+
+        
+        document.querySelectorAll('.check').forEach(button => {
+            button.addEventListener("click", async (e) => {
+                let id = e.target.dataset.id
+                let task = info.find(task => task.id == id);
+                let newStatus = task.status === 'On hold' ? 'ready' : 'ready';
+                let updatedTask = { ...task, status: newStatus };
+                
+                await checkTask(id, updatedTask);
+                await loadTasks();
             });
         });
     };
@@ -42,6 +55,19 @@ document.addEventListener('DOMContentLoaded', async() => {
 
     let createTask = document.querySelector('#createTask');
     createTask.addEventListener("click", async()=>{
+        let taskName = document.querySelector('#taskName');
+        let newTask = {
+            task: taskName.value,
+            status: 'On hold'
+        };
+        await addTask(newTask);
+        taskName.value = '';
+        info.push(newTask);
+        await loadTasks();
+    });
+
+    let createTaskInput = document.querySelector('#taskName');
+    createTaskInput.addEventListener("change", async()=>{
         let taskName = document.querySelector('#taskName');
         let newTask = {
             task: taskName.value,

@@ -31,3 +31,18 @@ export const deleteTask = async (id) => {
     const data = await res.json();
     return data;
 };
+
+export const checkTask = async(id, updateTask) => {
+    const url = `https://66760010a8d2b4d072f22091.mockapi.io/Todolist/${id}`;
+    const opcion = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updateTask)
+    };
+
+    const res = await fetch(url, opcion)
+    const data = await res.json();
+    return data;
+}
