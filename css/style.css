@@ -13,7 +13,7 @@ body{
     flex-direction: column;
     min-height: 100vh;
     padding-top: 15vh;
-    gap: 5vh;
+    gap: 4vh;
 }
 
 .header{
@@ -59,6 +59,12 @@ button {
     width: 24%;
     font-family: avenirMediu;
     color: rgba(255, 255, 255, 0.884);
+    overflow-y: scroll;
+    height: 53vh;
+  
+}
+::-webkit-scrollbar {
+    display: none;
 }
 
 #date{
@@ -101,4 +107,63 @@ button {
     padding: 0.5vh 2vh;
     align-items: center;
     border-radius: 4vh;
+}
+
+@media (max-width: 1240px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+body{
+    background-image: linear-gradient(100deg, #575656, #062e3f);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 15vh;
+    gap: 3vh;
+}
+    .main {
+        width: 45vh; 
+        p{
+            font-size: 2vh;
+        }
+    }
+    .header h1{
+        font-size: 9vh;
+        color: white;
+        font-family: "avenirMediu";
+        font-weight: 550;
+    }
+    #date{
+        color: rgba(255, 255, 255, 0.692);     
+        font-family: avenirMediu;
+        font-size: 2vh;
+    }
+    .main img{
+        width: 7vw;
+    }
+    
+    input {
+        border: none;
+        outline: none;
+        background-color: #1a1b1bf3;
+        color: white;
+        font-size: 2.3vh;
+        padding: 1.3vh 8vh 1.3vh 2.3vh;
+        border-radius: 2vh 0 0  2vh;
+    }
+    
+    button {
+        border: none;
+        outline: none;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        padding: 1.3vh 1.5vh;
+        font-size: 2.3vh;
+        border-radius: 0 2vh 2vh 0;
+    }
+
 }
