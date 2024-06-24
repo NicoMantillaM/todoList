@@ -3,7 +3,7 @@ import { task } from "./components/list.js";
 
 
 document.addEventListener('DOMContentLoaded', async() => {
-    
+
     const updateDateTime = () => {
         document.querySelector('#date').textContent = new Date().toLocaleString();
     };
@@ -12,7 +12,12 @@ document.addEventListener('DOMContentLoaded', async() => {
 
 
     let info = await getAllTask();
-    section_task1.innerHTML = await task(info);
 
+    //crear un nuevo array con los elementos que cumplan la condicion
+    let taskOnHold = info.filter(task=> task.status === 'On hold');   
+    let taskready = info.filter(task=> task.status === 'ready');
+
+    section__onhold.innerHTML = await task(taskOnHold, 'On hold');
+    section__ready.innerHTML = await task(taskready, 'ready');
 });
 

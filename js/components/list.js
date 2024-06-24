@@ -1,17 +1,28 @@
-export const task = async(info) => {
+export const task = async(info, status) => {
     let plantilla = "";
     
     info.forEach(element => {
-        
-        plantilla += /*html*/`
-        <div class="task_hold">
-            <p>${element.task}</p>
-            <div class="imagenes">
-                <img src="storage/img/check.png" alt="checkimg">
-                <img src="storage/img/trash.png" alt="trashimg">
+        if (status === 'On hold'){
+            plantilla += /*html*/`
+            <div class="task_hold">
+                <p>${element.task}</p>
+                <div class="imagenes">
+                    <img src="storage/img/check.png" alt="checkimg">
+                    <img src="storage/img/trash.png" alt="trashimg">
+                </div>
             </div>
-        </div>
-        `;
+            `;
+        }else if (status === 'ready'){
+            plantilla += /*html*/`
+            <div class="task_ready">
+                <del>${element.task}</del>
+                <div class="imagenes">
+                    <img src="storage/img/check.png" alt="checkimg">
+                    <img src="storage/img/trash.png" alt="trashimg">
+                </div>
+            </div>
+            `;
+        }
     });
     return plantilla;
 }
