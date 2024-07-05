@@ -1,5 +1,5 @@
 export const getAllTask = async() => {
-    const url = (`https://6674179975872d0e0a950e53.mockapi.io/todoList`)
+    const url = (`https://66882f670bc7155dc01ab4f6.mockapi.io/Todolist`)
     const opcion = {method: 'GET'};
 
     const res = await fetch(url, opcion);
@@ -8,7 +8,7 @@ export const getAllTask = async() => {
 }
 
 export const addTask = async(task) => {
-    const url = (`https://6674179975872d0e0a950e53.mockapi.io/todoList`)
+    const url = (`https://66882f670bc7155dc01ab4f6.mockapi.io/Todolist`)
     const opcion = {
         method: 'POST',
         headers: {
@@ -24,7 +24,7 @@ export const addTask = async(task) => {
 }
 
 export const deleteTask = async (id) => {
-    const url = `https://6674179975872d0e0a950e53.mockapi.io/todoList/${id}`;
+    const url = `https://66882f670bc7155dc01ab4f6.mockapi.io/Todolist/${id}`;
     const opcion = { method: 'DELETE' };
 
     const res = await fetch(url, opcion);
@@ -33,7 +33,7 @@ export const deleteTask = async (id) => {
 };
 
 export const checkTask = async(id, updateTask) => {
-    const url = `https://6674179975872d0e0a950e53.mockapi.io/todoList/${id}`;
+    const url = `https://66882f670bc7155dc01ab4f6.mockapi.io/Todolist/${id}`;
     const opcion = {
         method: 'PUT',
         headers: {
